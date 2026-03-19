@@ -107,12 +107,12 @@ https://YOUR-API-ID.execute-api.ap-south-1.amazonaws.com/ec2/status
 {
   "total_instances": 1,
   "instances": [{
-    "InstanceId": "i-054a6eeb4eaac01ba",
+    "InstanceId": "i-123333333333333",
     "Name": "test-instance-01",
     "State": "running",
     "InstanceType": "t2.micro",
     "Region": "ap-south-1",
-    "PublicIP": "3.111.47.221",
+    "PublicIP": "111111",
     "LaunchTime": "2026-03-19 16:17:40+00:00"
   }]
 }
