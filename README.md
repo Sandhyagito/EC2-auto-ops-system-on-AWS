@@ -105,27 +105,8 @@ Returns real-time status of all EC2 instances in the region.
 
 **Request:**
 ```bash
-curl https://cu0h97ppm0.execute-api.ap-south-1.amazonaws.com/ec2/status
+curl https://xyz.execute-api.ap-south-1.amazonaws.com/ec2/status
 ```
-
-**Response:**
-```json
-{
-  "total_instances": 1,
-  "instances": [
-    {
-      "InstanceId": "i-054a6eeb4eaac01ba",
-      "Name": "test-instance-01",
-      "State": "running",
-      "InstanceType": "t2.micro",
-      "Region": "ap-south-1",
-      "PublicIP": "3.111.47.221",
-      "LaunchTime": "2026-03-19 16:17:40+00:00"
-    }
-  ]
-}
-```
-
 ---
 
 ### POST /ec2/action
@@ -133,9 +114,9 @@ Stop, start, or reboot a specific EC2 instance by ID.
 
 **Request:**
 ```bash
-curl -X POST https://cu0h97ppm0.execute-api.ap-south-1.amazonaws.com/ec2/action \
+curl -X POST https://xyz.execute-api.ap-south-1.amazonaws.com/ec2/action \
   -H "Content-Type: application/json" \
-  -d '{"instance_id": "i-054a6eeb4eaac01ba", "action": "stop"}'
+  -d '{"instance_id": "i-123xxxxxxxx", "action": "stop"}'
 ```
 
 **Supported actions:** `stop` | `start` | `reboot`
@@ -145,8 +126,8 @@ curl -X POST https://cu0h97ppm0.execute-api.ap-south-1.amazonaws.com/ec2/action 
 {
   "success": true,
   "action": "stop",
-  "instance_id": "i-054a6eeb4eaac01ba",
-  "message": "Instance i-054a6eeb4eaac01ba is stopping"
+  "instance_id": "i-123xxxxxxxx",
+  "message": "Instance i-123xxxxxxxxxx is stopping"
 }
 ```
 
@@ -174,12 +155,12 @@ Subject: ⚠️ EC2 Auto-Heal: test-instance-01 (i-054a6eeb4eaac01ba) recovered 
 
 INSTANCE DETAILS
 ----------------
-Instance ID    : i-054a6eeb4eaac01ba
+Instance ID    : i-123xxxxxxxxx
 Instance Name  : test-instance-01
 Instance Type  : t2.micro
 Region         : ap-south-1
 Availability Z : ap-south-1b
-Private IP     : 172.31.13.252
+Private IP     : "1.2.3.4"
 
 INCIDENT TIMELINE
 -----------------
